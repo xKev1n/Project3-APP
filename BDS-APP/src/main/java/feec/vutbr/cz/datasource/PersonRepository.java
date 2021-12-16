@@ -35,10 +35,10 @@ public class PersonRepository {
              PreparedStatement preparedStatement = connection.prepareStatement(
                      "SELECT idemployee, username, pwd, title, firstname, middlename, surname, sex, birthdate, city, h_number, street, zip_code, country, salary, role" +
                              " FROM lib_db.employee e" +
-                             " JOIN lib_db.employee_has_address eha ON e.idemployee = eha.employee_idemployee" +
-                             " JOIN lib_db.address a ON a.idaddress = eha.address_idaddress"+
-                             " JOIN lib_db.salary s on s.idsalary = e.salary_idsalary"+
-                             " JOIN lib_db.employeerole er on er.idrole = e.employeerole_idrole"+
+                             " LEFT JOIN lib_db.employee_has_address eha ON e.idemployee = eha.employee_idemployee" +
+                             " LEFT JOIN lib_db.address a ON a.idaddress = eha.address_idaddress"+
+                             " LEFT JOIN lib_db.salary s on s.idsalary = e.salary_idsalary"+
+                             " LEFT JOIN lib_db.employeerole er on er.idrole = e.employeerole_idrole"+
                              " WHERE e.idemployee = ?")
         ) {
             preparedStatement.setInt(1, employeeId);
@@ -59,8 +59,8 @@ public class PersonRepository {
              PreparedStatement preparedStatement = connection.prepareStatement(
                      "SELECT idemployee, username, title, firstname, middlename, surname, city" +
                              " FROM lib_db.employee e" +
-                             " JOIN lib_db.employee_has_address eha ON e.idemployee = eha.employee_idemployee" +
-                             " JOIN lib_db.address a ON a.idaddress = eha.address_idaddress");
+                             " LEFT JOIN lib_db.employee_has_address eha ON e.idemployee = eha.employee_idemployee" +
+                             " LEFT JOIN lib_db.address a ON a.idaddress = eha.address_idaddress");
              ResultSet resultSet = preparedStatement.executeQuery()) {
             List<PersonBasicView> personBasicViews = new ArrayList<>();
             while (resultSet.next()) {

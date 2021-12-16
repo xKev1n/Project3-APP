@@ -9,6 +9,7 @@ public class PersonBasicView {
     private StringProperty givenName = new SimpleStringProperty();
     private StringProperty middleName = new SimpleStringProperty();
     private StringProperty familyName = new SimpleStringProperty();
+    private StringProperty sex = new SimpleStringProperty();
 
 
     public void setMiddleName(String middleName) {
@@ -79,5 +80,11 @@ public class PersonBasicView {
         return familyName;
     }
 
+    public String getSex() {
+        return sex.get();
+    }
 
+    public void setSex(String sex) {
+        this.sex.set(sex);
+    }
 }

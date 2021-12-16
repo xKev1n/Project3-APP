@@ -33,7 +33,7 @@ public class PersonsEditController {
     @FXML
     public TextField idTextField;
     @FXML
-    private TextField usernameTextField;
+    private TextField sexTextField;
     @FXML
     private TextField firstNameTextField;
     @FXML
@@ -61,7 +61,7 @@ public class PersonsEditController {
         validation = new ValidationSupport();
         validation.registerValidator(idTextField, Validator.createEmptyValidator("The id must not be empty."));
         idTextField.setEditable(false);
-        validation.registerValidator(usernameTextField, Validator.createEmptyValidator("The email must not be empty."));
+        validation.registerValidator(sexTextField, Validator.createEmptyValidator("The email must not be empty."));
         validation.registerValidator(firstNameTextField, Validator.createEmptyValidator("The first name must not be empty."));
         validation.registerValidator(lastNameTextField, Validator.createEmptyValidator("The last name must not be empty."));
 
@@ -78,7 +78,7 @@ public class PersonsEditController {
         if (stage.getUserData() instanceof PersonBasicView) {
             PersonBasicView personBasicView = (PersonBasicView) stage.getUserData();
             idTextField.setText(String.valueOf(personBasicView.getId()));
-            usernameTextField.setText(personBasicView.getUsername());
+            sexTextField.setText(personBasicView.getUsername());        //
             firstNameTextField.setText(personBasicView.getGivenName());
             lastNameTextField.setText(personBasicView.getFamilyName());
             middleNameTextField.setText(personBasicView.getMiddleName());
@@ -89,7 +89,7 @@ public class PersonsEditController {
     public void handleEditPersonButton(ActionEvent event) {
         // can be written easier, its just for better explanation here on so many lines
         Long id = Long.valueOf(idTextField.getText());
-        String username = usernameTextField.getText();
+        String sex = sexTextField.getText();
         String firstName = firstNameTextField.getText();
         String lastName = lastNameTextField.getText();
         String middleName = middleNameTextField.getText();
@@ -97,7 +97,7 @@ public class PersonsEditController {
         PersonEditView personEditView = new PersonEditView();
         personEditView.setId(id);
         personEditView.setMiddleName(middleName);
-        personEditView.setEmail(username);
+        personEditView.setSex(sex);
         personEditView.setFirstName(firstName);
         personEditView.setSurname(lastName);
 

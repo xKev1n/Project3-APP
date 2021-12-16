@@ -3,7 +3,7 @@ package feec.vutbr.cz.api;
 public class PersonEditView {
 
     private Long id;
-    private String username;
+    private String sex;
     private String firstName;
     private String middleName;
     private String surname;
@@ -17,11 +17,11 @@ public class PersonEditView {
     }
 
     public String getUsername() {
-        return username;
+        return sex;
     }
 
-    public void setEmail(String username) {
-        this.username = username;
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public String getFirstName() {
@@ -51,7 +51,7 @@ public class PersonEditView {
     @Override
     public String toString() {
         return "PersonEditView{" +
-                "username='" + username + '\'' +
+                "sex='" + sex + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", middleName='" + middleName + '\'' +
                 ", surname='" + surname + '\'' +

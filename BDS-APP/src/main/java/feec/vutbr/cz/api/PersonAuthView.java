@@ -15,8 +15,9 @@ public class PersonAuthView {
     }
 
     public String getPassword() {
-        return BCrypt.withDefaults().hashToString(12, password.toCharArray());
+        //return BCrypt.withDefaults().hashToString(12, password.toCharArray());
         // return only password, because there will be stored hashes; TODO: add all employees through the app.
+        return password;
     }
 
     public void setPassword(String password) {
