@@ -16,7 +16,7 @@ public class PersonEditView {
         this.id = id;
     }
 
-    public String getUsername() {
+    public String getSex() {
         return sex;
     }
 

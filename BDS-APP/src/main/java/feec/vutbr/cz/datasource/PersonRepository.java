@@ -57,7 +57,7 @@ public class PersonRepository {
     public List<PersonBasicView> getPersonsBasicView() {
         try (Connection connection = DataSourceConfig.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(
-                     "SELECT idemployee, username, title, firstname, middlename, surname, city" +
+                     "SELECT idemployee, username, title, sex, firstname, middlename, surname, city" +
                              " FROM lib_db.employee e" +
                              " LEFT JOIN lib_db.employee_has_address eha ON e.idemployee = eha.employee_idemployee" +
                              " LEFT JOIN lib_db.address a ON a.idaddress = eha.address_idaddress");
@@ -101,13 +101,13 @@ public class PersonRepository {
     }
 
     public void editPerson(PersonEditView personEditView) {
-        String insertPersonSQL = "UPDATE lib_db.employee e SET username = ?, firstname = ?, middlename = ?, surname = ? WHERE e.idemployee = ?";
+        String insertPersonSQL = "UPDATE lib_db.employee e SET sex = ?, firstname = ?, middlename = ?, surname = ? WHERE e.idemployee = ?";
         String checkIfExists = "SELECT username FROM lib_db.employee e WHERE e.idemployee = ?";
         try (Connection connection = DataSourceConfig.getConnection();
              // would be beneficial if I will return the created entity back
              PreparedStatement preparedStatement = connection.prepareStatement(insertPersonSQL, Statement.RETURN_GENERATED_KEYS)) {
             // set prepared statement variables
-            preparedStatement.setString(1, personEditView.getUsername());
+            preparedStatement.setString(1, personEditView.getSex());
             preparedStatement.setString(2, personEditView.getFirstName());
             preparedStatement.setString(3, personEditView.getMiddleName());
             preparedStatement.setString(4, personEditView.getSurname());
@@ -150,6 +150,7 @@ public class PersonRepository {
         PersonBasicView personBasicView = new PersonBasicView();
         personBasicView.setId(rs.getInt("idemployee"));
         personBasicView.setUsername(rs.getString("username"));
+        personBasicView.setSex(rs.getString("sex"));
         personBasicView.setGivenName(rs.getString("firstname"));
         personBasicView.setFamilyName(rs.getString("surname"));
         personBasicView.setMiddleName(rs.getString("middlename"));

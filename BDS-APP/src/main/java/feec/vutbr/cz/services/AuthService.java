@@ -32,7 +32,12 @@ public class AuthService {
         BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), personAuthView.getPassword());
         return result.verified;
     }
-
+/*
+    public static void main(String[] args) {
+        char[] bcryptChars = BCrypt.with(BCrypt.Version.VERSION_2Y).hashToChar(6, "batman".toCharArray());
+        System.out.println(bcryptChars);
+    }
+*/
 
 }
 

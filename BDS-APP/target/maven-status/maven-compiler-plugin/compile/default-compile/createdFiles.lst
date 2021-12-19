@@ -7,14 +7,17 @@ feec\vutbr\cz\controllers\PersonCreateController$1.class
 feec\vutbr\cz\controllers\PersonsController.class
 feec\vutbr\cz\config\DataSourceConfig.class
 feec\vutbr\cz\controllers\PersonsEditController$1.class
+feec\vutbr\cz\controllers\SqlInjectionController$1.class
 feec\vutbr\cz\Main.class
 feec\vutbr\cz\exceptions\ResourceNotFoundException.class
 feec\vutbr\cz\controllers\LoginController$1.class
 feec\vutbr\cz\api\PersonBasicView.class
 feec\vutbr\cz\services\AuthService.class
+feec\vutbr\cz\controllers\SqlInjectionController.class
 feec\vutbr\cz\exceptions\ExceptionHandler.class
 feec\vutbr\cz\datasource\PersonRepository.class
 feec\vutbr\cz\exceptions\DataAccessException.class
+feec\vutbr\cz\api\SqlBasicView.class
 feec\vutbr\cz\controllers\PersonsEditController.class
 feec\vutbr\cz\api\PersonAuthView.class
 feec\vutbr\cz\controllers\PersonCreateController.class

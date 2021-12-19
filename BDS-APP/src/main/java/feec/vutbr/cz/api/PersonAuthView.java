@@ -1,6 +1,6 @@
 package feec.vutbr.cz.api;
 
-//import at.favre.lib.crypto.bcrypt.BCrypt;
+import at.favre.lib.crypto.bcrypt.BCrypt;
 
 public class PersonAuthView {
     private String username;

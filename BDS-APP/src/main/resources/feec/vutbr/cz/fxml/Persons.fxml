@@ -29,7 +29,7 @@
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
           <items>
-            <MenuItem mnemonicParsing="false" text="Nobody will help you here, call an ambulance!" />
+            <MenuItem mnemonicParsing="false" text="Help, I need somebody help!" />
           </items>
         </Menu>
       </menus>
@@ -58,6 +58,7 @@
                         </TableView>
                         <Button fx:id="addPersonButton" layoutX="24.0" layoutY="491.0" mnemonicParsing="false" onAction="#handleAddPersonButton" prefHeight="47.0" prefWidth="87.0" text="Add person" />
                         <Button fx:id="refreshButton" layoutX="127.0" layoutY="491.0" mnemonicParsing="false" onAction="#handleRefreshButton" prefHeight="47.0" prefWidth="87.0" text="Refresh" />
+                        <Button fx:id="SqlInjectionButton" layoutX="847.0" layoutY="491.0" mnemonicParsing="false" onAction="#handleSqlInjectionButton" prefHeight="47.0" prefWidth="87.0" text="SQL Injection" />
               </children>
             </AnchorPane>
           </content>

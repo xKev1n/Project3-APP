@@ -61,7 +61,7 @@ public class PersonsEditController {
         validation = new ValidationSupport();
         validation.registerValidator(idTextField, Validator.createEmptyValidator("The id must not be empty."));
         idTextField.setEditable(false);
-        validation.registerValidator(sexTextField, Validator.createEmptyValidator("The email must not be empty."));
+        //validation.registerValidator(sexTextField, Validator.createEmptyValidator("The sex must not be empty."));
         validation.registerValidator(firstNameTextField, Validator.createEmptyValidator("The first name must not be empty."));
         validation.registerValidator(lastNameTextField, Validator.createEmptyValidator("The last name must not be empty."));
 
@@ -78,7 +78,7 @@ public class PersonsEditController {
         if (stage.getUserData() instanceof PersonBasicView) {
             PersonBasicView personBasicView = (PersonBasicView) stage.getUserData();
             idTextField.setText(String.valueOf(personBasicView.getId()));
-            sexTextField.setText(personBasicView.getUsername());        //
+            sexTextField.setText(personBasicView.getSex());        //
             firstNameTextField.setText(personBasicView.getGivenName());
             lastNameTextField.setText(personBasicView.getFamilyName());
             middleNameTextField.setText(personBasicView.getMiddleName());

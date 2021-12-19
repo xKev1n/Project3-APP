@@ -4,6 +4,7 @@ package feec.vutbr.cz.controllers;
 import feec.vutbr.cz.App;
 import feec.vutbr.cz.api.PersonBasicView;
 import feec.vutbr.cz.api.PersonDetailView;
+import feec.vutbr.cz.api.SqlBasicView;
 import feec.vutbr.cz.datasource.PersonRepository;
 import feec.vutbr.cz.exceptions.ExceptionHandler;
 import feec.vutbr.cz.services.PersonService;
@@ -32,6 +33,8 @@ public class PersonsController {
     public Button addPersonButton;
     @FXML
     public Button refreshButton;
+    @FXML
+    public Button SqlInjectionButton;
     @FXML
     private TableColumn<PersonBasicView, Long> personsId;
     @FXML
@@ -175,10 +178,25 @@ public class PersonsController {
     }
 
     public void handleRefreshButton(ActionEvent actionEvent) {
-        ObservableList<PersonBasicView> observablePersonsList = initializePersonsData();
-        systemPersonsTableView.setItems(observablePersonsList);
+        ObservableList<PersonBasicView> observableSqlList = initializePersonsData();
+        systemPersonsTableView.setItems(observableSqlList);
         systemPersonsTableView.refresh();
         systemPersonsTableView.sort();
+    }
+
+    public void handleSqlInjectionButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(App.class.getResource("fxml/DummyTable.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 600, 500);
+            Stage stage = new Stage();
+            stage.setTitle("BDS JavaFX SQL Injection");
+            stage.setScene(scene);
+
+            stage.show();
+        } catch (IOException ex) {
+            ExceptionHandler.handleException(ex);
+        }
     }
 }
 
