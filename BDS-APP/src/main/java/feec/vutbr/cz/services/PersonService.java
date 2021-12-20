@@ -31,7 +31,6 @@ public class PersonService {
     }
 
     public void createPerson(PersonCreateView personCreateView) {
-        // the following three lines can be written in one code line (only for more clear explanation it is written in three lines
         String originalPassword = personCreateView.getPwd();
         String hashedPassword = hashPassword(originalPassword);
         personCreateView.setPwd(hashedPassword);

@@ -90,7 +90,6 @@
     </dependencies>
 
     <build>
-        <finalName>maven-docker-app</finalName>
         <plugins>
             <!-- build a single executable JAR -->
             <plugin>

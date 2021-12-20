@@ -5,7 +5,6 @@
   <artifactId>BDS-APP</artifactId>
   <version>1.0.0</version>
   <build>
-    <finalName>maven-docker-app</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>

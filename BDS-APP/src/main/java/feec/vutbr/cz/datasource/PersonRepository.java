@@ -73,14 +73,13 @@ public class PersonRepository {
     }
 
     public void createPerson(PersonCreateView personCreateView) {
-        String insertPersonSQL = "INSERT INTO lib_db.employee (firstname, middlename, surname, username, pwd, birthdate, Salary_idSalary, EmployeeRole_idRole) VALUES (?,?,?,?,?,?,?,?)";
+        String insertPersonSQL = "INSERT INTO lib_db.employee (firstname, middlename, surname, username, pwd, birthdate, Salary_idSalary, EmployeeRole_idRole) VALUES (?,?,?,?,?,?,?,?);";
         try (Connection connection = DataSourceConfig.getConnection();
-             // would be beneficial if I will return the created entity back
              PreparedStatement preparedStatement = connection.prepareStatement(insertPersonSQL, Statement.RETURN_GENERATED_KEYS)) {
             // set prepared statement variables
-            /*if (personCreateView.getMiddleName() == ""){
+            if (personCreateView.getMiddleName() == ""){
                 personCreateView.setMiddleName(null);
-            }*/
+            }
             preparedStatement.setString(1, personCreateView.getFirstName());
             preparedStatement.setString(2, personCreateView.getMiddleName());
             preparedStatement.setString(3, personCreateView.getSurname());
