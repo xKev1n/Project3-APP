@@ -31,6 +31,7 @@ public class App extends Application {
 
         @Override
         public void start(Stage primaryStage) {
+            /*
             //Dockerization
             server = null;
             try {
@@ -41,7 +42,7 @@ public class App extends Application {
             server.createContext("/", new MyHandler());
             server.setExecutor(null); // creates a default executor
             server.start();
-
+            */
             try {
                 loader = new FXMLLoader(getClass().getResource("App.fxml"));
                 mainStage = loader.load();
@@ -56,13 +57,13 @@ public class App extends Application {
                 primaryStage.getIcons().add(new Image(App.class.getResourceAsStream("logos/vut.jpg")));
                 primaryStage.setScene(scene);
                 primaryStage.show();
-
+                /*
                 primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
                     @Override
                     public void handle(WindowEvent windowEvent) {
                         server.stop(1000);
                     }
-                });
+                });*/
             } catch (Exception ex) {
                 ExceptionHandler.handleException(ex);
             }
