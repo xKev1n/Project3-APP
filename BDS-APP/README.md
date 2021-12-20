@@ -29,7 +29,7 @@ $ java -jar target/BDS-APP-1.0.0.jar
 ```
 
 ## Dockerization
-The project was supposed to be dockerizated, but I wasn't able to fix issue when triing to run the created image.
+The project was supposed to be dockerizated, but I wasn't able to fix issue when trying to run the created image.
 ```shell
 $ docker build -t docker_app .
 $ docker run docker_app
