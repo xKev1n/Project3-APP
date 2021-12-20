@@ -1,14 +1,17 @@
 To build this application you need to run:
 
 mvn clean install
+
 java -jar .\target\BDS-APP-1.0.0.jar
 
 Dockerization:
 
 docker build -t docker_app .
+
 docker run docker_app
 
 Application to BPC-BDS
+
 Third project
 
 
